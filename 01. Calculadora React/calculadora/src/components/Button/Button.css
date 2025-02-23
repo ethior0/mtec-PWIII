@@ -33,6 +33,6 @@
 }
 
 .button:not(.clear):not(.operator):not(.equal) {
-  background-color: hsl(0, 0%, 45%);
-  border-bottom: 2px solid hsl(0, 0%, 30%);
+  background-color: hsl(200, 16%, 50%);
+  border-bottom: 2px solid hsl(200, 16%, 35%);
 }
