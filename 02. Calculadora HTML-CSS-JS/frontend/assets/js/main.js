@@ -34,7 +34,7 @@ function criaCalculadora() {
       }
 
       const res = await fetchCalculadora(conta);
-      console.log(res);
+      console.log("Resultado que veio do back", res);
 
       if (!res.erro) {
         this.trocaCorResultado('black', 600);
