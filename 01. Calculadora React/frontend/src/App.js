@@ -67,9 +67,13 @@ function App() {
     console.log("Histórico:", nextHistory);
   }
 
-  const handleEqual = (res) => {
-    setResult(res);
-    updateHistory(res);
+  const handleEqual = (data) => {
+    const resultado = data.resultado;
+    if (!data.erro) {
+      updateHistory(resultado);
+    }
+    setResult(resultado);
+
   }
 
   const historyData = history.map(([inp, res], i) => {
