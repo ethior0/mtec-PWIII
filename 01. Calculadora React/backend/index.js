@@ -18,17 +18,20 @@ app.post("/", (req, res) => {
   const { input } = req.body;
   console.log("Body backend:", input);
 
+  const msg = {
+    resultado: '',
+    erro: false,
+  };
+
   try {
     const result = evaluate(input).toString()
-    console.log("Resposta back:", result);
-    res.json(result);
+    msg.resultado = result;
   } catch(error) {
-    console.log("Erro back");
-    res.status(500).json({
-      message: "Erro",
-      error: error.message,
-    });
+    msg.resultado = 'Conta Inválida',
+    msg.erro = true;
   }
+  console.log(msg);
+  res.send(msg);
 });
 
 app.listen(port, () => console.log(`Rodando na porta ${port}`));
